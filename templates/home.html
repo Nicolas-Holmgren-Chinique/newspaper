@@ -15,7 +15,7 @@
 
    <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
-        <button type="submit">Logout</button>
+        <button class="btn btn-outline-primary" type="submit">Logout</button>
     </form>
 {% else %}
     <p>You are not logged in</p>
