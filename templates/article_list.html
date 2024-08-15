@@ -20,6 +20,17 @@
         <a href="{% url 'article_update' article.pk %}">Edit</a> 
         <a href="{% url 'article_delete' article.pk %}">Delete</a>
     {% endif %}
+
+    <a href="{{ article.get_absolute_url }}">New comment</a>
+
+    {% for comment in article.comment_set.all %}
+    <p>
+        <span class="fw-bold">
+            {{ comment.author }} &middot;
+        </span>
+        {{ comment }}
+    </p>
+    {% endfor %}
     </div>
 </div>
 <br/>
